@@ -24,6 +24,14 @@ with open (outputfile_path, 'w') as outputfile:
                 # skip NAME comment line
                 if line[2:7] == "NAME:":
                     continue
+                if "Sideboard" in line:
+                    outputfile.write("\nSideboard:\n")
+                    currenttag = ""
+                    continue
+                if "Maybeboard" in line:
+                    outputfile.write("\nConsidering:\n")
+                    currenttag = ""
+                    continue
                 # update tag to current comment
                 currenttag = line[2:].rstrip()
                 #print("Changed current tag to #" + currenttag)
