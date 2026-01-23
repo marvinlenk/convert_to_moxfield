@@ -60,9 +60,9 @@ with open (outputfile_path, 'w') as outputfile:
             # check if card comment is given, discard if found
             if "#" in linerest:
                 commentposition = linerest.find("#")
-                card_name = linerest[0:commentposition].rstrip()
+                card_name = linerest[0:commentposition].rstrip().replace("//","/")
             else:
-                card_name = linerest.rstrip()
+                card_name = linerest.rstrip().replace("//","/")
             
 
             # combine everything into new line in output
