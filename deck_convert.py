@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import argparse
 
 # parse argument, first argument must be input file
